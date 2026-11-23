@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CriaturaActivity">
+
+    <!-- Conteúdo da tela -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Busca de Criatura"
+            android:textColor="#7E57C2"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <!-- Campo de texto -->
+        <EditText
+            android:id="@+id/etNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Digite o nome completo (ex.: Hippogriff)"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <Button
+            android:id="@+id/btnBuscar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:onClick="buscarCriatura"
+            android:text="Buscar" />
+
+        <!-- ProgressBar invisível inicialmente -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:visibility="gone" />
+
+        <!-- Mensagem de "nenhum resultado" ou de erro -->
+        <TextView
+            android:id="@+id/tvMensagem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <!-- Nome e imagem da criatura encontrada -->
+        <LinearLayout
+            android:id="@+id/layoutResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <!-- fitCenter mantém a proporção da imagem (sem distorção) -->
+            <ImageView
+                android:id="@+id/ivCriatura"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="12dp"
+                android:contentDescription="Imagem da criatura"
+                android:scaleType="fitCenter" />
+
+            <!-- Aparece junto com a imagem substituta -->
+            <TextView
+                android:id="@+id/tvImagemIndisponivel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Imagem indisponível"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
